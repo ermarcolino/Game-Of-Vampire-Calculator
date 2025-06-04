@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Of Vampire Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        nav {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #0066cc;
+        }
+        .calculator {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+        }
+        .input-group i {
+            margin-right: 10px;
+            color: #666;
+            font-size: 20px;
+        }
+        input {
+            padding: 8px;
+            flex-grow: 1;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 10px 0;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0055aa;
+        }
+        .result {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            min-height: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Of Vampire Calculator</h1>
+    
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPage('Intimacy')">Intimacy</a></li>
+            <li><a href="#" onclick="showPage('Attraction')">Attraction</a></li>
+            <li><a href="#" onclick="showPage('Talent')">Talent</a></li>
+            <li><a href="#" onclick="showPage('Dominance')">Dominance</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Intimacy Calculator -->
+    <div id="Intimacy" class="calculator">
+        <h2>Intimacy Calculator</h2>
+        <p>Enter your stocks for each item:</p>
+
+        <div class="input-group">
+            <i class="fas fa-box"></i>
+            <input type="number" id="int1" placeholder="Intimacy Case">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-briefcase"></i>
+            <input type="number" id="int2" placeholder="Intimacy Bag">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-shopping-bag"></i>
+            <input type="number" id="int3" placeholder="Intimacy Purse">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-gift"></i>
+            <input type="number" id="int4" placeholder="Premium Gift Box">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-gifts"></i>
+            <input type="number" id="int5" placeholder="Deluxe Gift Box">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-box-open"></i>
+            <input type="number" id="int6" placeholder="Gift Box">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-coins"></i>
+            <input type="number" id="int7" placeholder="Golden Demon Coin">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-coins"></i>
+            <input type="number" id="int8" placeholder="Silver Demon Coin">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-coins"></i>
+            <input type="number" id="int9" placeholder="Bronze Demon Coin">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-coin"></i>
+            <input type="number" id="int10" placeholder="Demon Coin">
+        </div>
+
+        <button onclick="calculateIntimacy()">Calculate</button>
+        <button onclick="clearFields('Intimacy')" class="clear-btn">Clear All</button>
+        <div id="IntimacyResult" class="result"></div>
+    </div>
+    
+    <!-- Attraction Calculator -->
+    <div id="Attraction" class="calculator hidden">
+        <h2>Attraction Calculator</h2>
+        <p>Enter your stocks for each item:</p>
+
+        <div class="input-group">
+            <i class="fas fa-box"></i>
+            <input type="number" id="att1" placeholder="Charm Box">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-wine-bottle"></i>
+            <input type="number" id="att2" placeholder="Charm Bottle">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-flask"></i>
+            <input type="number" id="att3" placeholder="Charm Phial">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-spa"></i>
+            <input type="number" id="att4" placeholder="Indigo Bouquet">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-spa"></i>
+            <input type="number" id="att5" placeholder="Azure Bouquet">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-spa"></i>
+            <input type="number" id="att6" placeholder="Rose Bouquet">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="att7" placeholder="Gilded Text">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="att8" placeholder="Sanguine Text">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="att9" placeholder="Nocturnal Text">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="att10" placeholder="Spectral Text">
+        </div>
+
+        <button onclick="calculateAttraction()">Calculate</button>
+        <button onclick="clearFields('Attraction')" class="clear-btn">Clear All</button>
+        <div id="AttractionResult" class="result"></div>
+    </div>
+
+    <!-- Talent Calculator -->
+    <div id="Talent" class="calculator hidden">
+        <h2>Talent Calculator</h2>
+        <p>Enter your stocks for each item:</p>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal1" placeholder="Talent Scroll VI">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal2" placeholder="Talent Scroll V">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal3" placeholder="Talent Scroll IV">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal4" placeholder="Talent Scroll III">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal5" placeholder="Talent Scroll II">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal6" placeholder="Talent Scroll I">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal7" placeholder="Superior Talent Scroll">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal8" placeholder="Fine Talent Scroll">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal9" placeholder="Basic Talent Scroll">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal10" placeholder="Random Talent Scroll">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal11" placeholder="Talent Scroll Lvl-7">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal12" placeholder="Talent Scroll Lvl-6">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal13" placeholder="Talent Scroll Lvl-5">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal14" placeholder="Talent Scroll Lvl-4">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal15" placeholder="Talent Scroll Lvl-3">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal16" placeholder="Talent Scroll Lvl-2">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal17" placeholder="Talent Scroll Lvl-1">
+        </div>
+
+        <h3>Scripts:</h3>
+        <p>Scripts operate somewhat differently; you must select the specific talents on which to use the script.</p>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal18" placeholder="Strengh Scrip">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal19" placeholder="Allure Scrip">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal20" placeholder="Intellect Scrip">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-scroll"></i>
+            <input type="number" id="tal21" placeholder="Spirit Scrip">
+        </div>
+
+        <button onclick="calculateTalent()">Calculate</button>
+        <button onclick="clearFields('Talent')" class="clear-btn">Clear All</button>
+        <div id="TalentResult" class="result"></div>
+    </div>
+    
+<!-- Dominance Calculator -->
+    <div id="Dominance" class="calculator">
+        <h2>Dominance Calculator</h2>
+        <p>Under Construction.</p>
+
+
+    </div>
+
+    <script>
+        // Show the selected page and hide others
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.calculator');
+            pages.forEach(page => {
+                if (page.id === pageId) {
+                    page.classList.remove('hidden');
+                } else {
+                    page.classList.add('hidden');
+                }
+            });
+        }
+        
+        // Intimacy calculation
+        function calculateIntimacy() {
+            const num1 = document.getElementById('int1').value ? parseFloat(document.getElementById('int1').value) : 0;
+            const num2 = document.getElementById('int2').value ? parseFloat(document.getElementById('int2').value) : 0;
+            const num3 = document.getElementById('int3').value ? parseFloat(document.getElementById('int3').value) : 0;
+            const num4 = document.getElementById('int4').value ? parseFloat(document.getElementById('int4').value) : 0;
+            const num5 = document.getElementById('int5').value ? parseFloat(document.getElementById('int5').value) : 0;
+            const num6 = document.getElementById('int6').value ? parseFloat(document.getElementById('int6').value) : 0;
+            const num7 = document.getElementById('int7').value ? parseFloat(document.getElementById('int7').value) : 0;
+            const num8 = document.getElementById('int8').value ? parseFloat(document.getElementById('int8').value) : 0;
+            const num9 = document.getElementById('int9').value ? parseFloat(document.getElementById('int9').value) : 0;
+            const num10 = document.getElementById('int10').value ? parseFloat(document.getElementById('int10').value) : 0;
+            
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5) || 
+                isNaN(num6) || isNaN(num7) || isNaN(num8) || isNaN(num9) || isNaN(num10)) {
+                document.getElementById('IntimacyResult').textContent = 'Please enter valid numbers';
+                return;
+            }
+            
+            const result = (num1 * 27) + (num2 * 6.5) + (num3 * 2.5) + (num4 * 5) + (num5 * 2) + 
+                         (num6 * 1) + (num7 * 25) + (num8 * 5) + (num9 * 2) + (num10 * 1);
+            document.getElementById('IntimacyResult').textContent = `Result: ${result}`;
+        }
+        
+        // Attraction calculation
+        function calculateAttraction() {
+            const num1 = document.getElementById('att1').value ? parseFloat(document.getElementById('att1').value) : 0;
+            const num2 = document.getElementById('att2').value ? parseFloat(document.getElementById('att2').value) : 0;
+            const num3 = document.getElementById('att3').value ? parseFloat(document.getElementById('att3').value) : 0;
+            const num4 = document.getElementById('att4').value ? parseFloat(document.getElementById('att4').value) : 0;
+            const num5 = document.getElementById('att5').value ? parseFloat(document.getElementById('att5').value) : 0;
+            const num6 = document.getElementById('att6').value ? parseFloat(document.getElementById('att6').value) : 0;
+            const num7 = document.getElementById('att7').value ? parseFloat(document.getElementById('att7').value) : 0;
+            const num8 = document.getElementById('att8').value ? parseFloat(document.getElementById('att8').value) : 0;
+            const num9 = document.getElementById('att9').value ? parseFloat(document.getElementById('att9').value) : 0;
+            const num10 = document.getElementById('att10').value ? parseFloat(document.getElementById('att10').value) : 0;
+            
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5) || 
+                isNaN(num6) || isNaN(num7) || isNaN(num8) || isNaN(num9) || isNaN(num10)) {
+                document.getElementById('AttractionResult').textContent = 'Please enter valid numbers';
+                return;
+            }
+            
+            const result = (num1 * 27) + (num2 * 6.5) + (num3 * 2.5) + (num4 * 5) + (num5 * 2) + 
+                         (num6 * 1) + (num7 * 25) + (num8 * 5) + (num9 * 2) + (num10 * 1);
+            document.getElementById('AttractionResult').textContent = `Result: ${result}`;
+        }
+        
+        // Talent calculation
+        function calculateTalent() {
+            const num1 = document.getElementById('tal1').value ? parseFloat(document.getElementById('tal1').value) : 0;
+            const num2 = document.getElementById('tal2').value ? parseFloat(document.getElementById('tal2').value) : 0;
+            const num3 = document.getElementById('tal3').value ? parseFloat(document.getElementById('tal3').value) : 0;
+            const num4 = document.getElementById('tal4').value ? parseFloat(document.getElementById('tal4').value) : 0;
+            const num5 = document.getElementById('tal5').value ? parseFloat(document.getElementById('tal5').value) : 0;
+            const num6 = document.getElementById('tal6').value ? parseFloat(document.getElementById('tal6').value) : 0;
+            const num7 = document.getElementById('tal7').value ? parseFloat(document.getElementById('tal7').value) : 0;
+            const num8 = document.getElementById('tal8').value ? parseFloat(document.getElementById('tal8').value) : 0;
+            const num9 = document.getElementById('tal9').value ? parseFloat(document.getElementById('tal9').value) : 0;
+            const num10 = document.getElementById('tal10').value ? parseFloat(document.getElementById('tal10').value) : 0;
+            const num11 = document.getElementById('tal11').value ? parseFloat(document.getElementById('tal11').value) : 0;
+            const num12 = document.getElementById('tal12').value ? parseFloat(document.getElementById('tal12').value) : 0;
+            const num13 = document.getElementById('tal13').value ? parseFloat(document.getElementById('tal13').value) : 0;
+            const num14 = document.getElementById('tal14').value ? parseFloat(document.getElementById('tal14').value) : 0;
+            const num15 = document.getElementById('tal15').value ? parseFloat(document.getElementById('tal15').value) : 0;
+            const num16 = document.getElementById('tal16').value ? parseFloat(document.getElementById('tal16').value) : 0;
+            const num17 = document.getElementById('tal17').value ? parseFloat(document.getElementById('tal17').value) : 0;
+            const num18 = document.getElementById('tal18').value ? parseFloat(document.getElementById('tal18').value) : 0;
+            const num19 = document.getElementById('tal19').value ? parseFloat(document.getElementById('tal19').value) : 0;
+            const num20 = document.getElementById('tal20').value ? parseFloat(document.getElementById('tal20').value) : 0;
+            const num21 = document.getElementById('tal21').value ? parseFloat(document.getElementById('tal21').value) : 0;
+
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5) || 
+                isNaN(num6) || isNaN(num7) || isNaN(num8) || isNaN(num9) || isNaN(num10) ||
+                isNaN(num11) || isNaN(num12) || isNaN(num13) || isNaN(num14) || isNaN(num15) || 
+                isNaN(num16) || isNaN(num17) || isNaN(num18) || isNaN(num19) || isNaN(num20) || isNaN(num21)) {
+                document.getElementById('TalentResult').textContent = 'Please enter valid numbers';
+                return;
+            }
+            
+            const result = (num1 * 6) + (num2 * 5) + (num3 * 4) + (num4 * 3) + (num5 * 2) + 
+                         (num6 * 1) + (num7 * 1) + (num8 * 0.5) + (num9 * 0.25) + (num10 * 2.5) + 
+                         (num11 * 0.9) + (num12 * 0.7) + (num13 * 0.5) + (num14 * 0.3) + (num15 * 0.15) + 
+                         (num16 * 0.065) + (num17 * 0.015) + (num18 * 1) + (num19 * 1) + (num20 * 1) + (num21 * 1);
+            document.getElementById('TalentResult').textContent = `Result: ${result}`;
+        }
+        
+        function clearFields(calculatorType) {
+            // Clear input fields
+            const inputs = document.querySelectorAll(`#${calculatorType} input[type="number"]`);
+            inputs.forEach(input => {
+                input.value = '';
+            });
+            
+            // Clear the result display
+            document.getElementById(`${calculatorType}Result`).textContent = '';
+        }
+
+        // Show Intimacy calculator by default when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('Intimacy');
+        });
+    </script>
+</body>
+</html>
