@@ -331,6 +331,160 @@
     <div id="Dominance" class="calculator">
         <h2>Dominance Calculator</h2>
         <p>Under Construction.</p>
+<!-- Domination Calculator -->
+<div id="Domination" class="calculator hidden">
+    <h2>Domination Calculator</h2>
+    <p>Enter your stocks for each item:</p>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom1" placeholder="Domination Scroll VI">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom2" placeholder="Domination Scroll V">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom3" placeholder="Domination Scroll IV">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom4" placeholder="Domination Scroll III">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom5" placeholder="Domination Scroll II">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom6" placeholder="Domination Scroll I">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom7" placeholder="Superior Domination Scroll">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom8" placeholder="Fine Domination Scroll">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom9" placeholder="Basic Domination Scroll">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom10" placeholder="Random Domination Scroll">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom11" placeholder="Domination Scroll Lvl-7">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom12" placeholder="Domination Scroll Lvl-6">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom13" placeholder="Domination Scroll Lvl-5">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom14" placeholder="Domination Scroll Lvl-4">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom15" placeholder="Domination Scroll Lvl-3">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom16" placeholder="Domination Scroll Lvl-2">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom17" placeholder="Domination Scroll Lvl-1">
+    </div>
+
+    <h3>Scripts:</h3>
+    <p>Scripts operate somewhat differently; you must select the specific dominations on which to use the script.</p>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom18" placeholder="Strength Script">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom19" placeholder="Allure Script">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom20" placeholder="Intellect Script">
+    </div>
+
+    <div class="input-group">
+        <i class="fas fa-scroll"></i>
+        <input type="number" id="dom21" placeholder="Spirit Script">
+    </div>
+
+<h3>Books:</h3>
+<p>Enter your stocks for each book type:</p>
+
+<div class="input-group">
+    <i class="fas fa-scroll"></i>
+    <input type="number" id="dom22" placeholder="15k Book (1000 for 15 Wardens)">
+</div>
+
+<div class="input-group">
+    <i class="fas fa-scroll"></i>
+    <input type="number" id="dom23" placeholder="5k Book">
+</div>
+
+<div class="input-group">
+    <i class="fas fa-scroll"></i>
+    <input type="number" id="dom24" placeholder="1k Book">
+</div>
+
+<div class="input-group">
+    <i class="fas fa-scroll"></i>
+    <input type="number" id="dom25" placeholder="1.5k Book (100 for 15 Wardens)">
+</div>
+
+<div class="input-group">
+    <i class="fas fa-scroll"></i>
+    <input type="number" id="dom26" placeholder="400 Book">
+</div>
+
+<div class="input-group">
+    <i class="fas fa-scroll"></i>
+    <input type="number" id="dom27" placeholder="100 Book">
+</div>
+
+
+    
+
+    <button onclick="calculateDomination()">Calculate</button>
+    <button onclick="clearFields('Domination')" class="clear-btn">Clear All</button>
+    <div id="DominationResult" class="result"></div>
+</div>
+
 
 
     </div>
@@ -428,12 +582,56 @@
                 return;
             }
             
+            
             const result = (num1 * 6) + (num2 * 5) + (num3 * 4) + (num4 * 3) + (num5 * 2) + 
                          (num6 * 1) + (num7 * 1) + (num8 * 0.5) + (num9 * 0.25) + (num10 * 2.5) + 
                          (num11 * 0.9) + (num12 * 0.7) + (num13 * 0.5) + (num14 * 0.3) + (num15 * 0.15) + 
                          (num16 * 0.065) + (num17 * 0.015) + (num18 * 1) + (num19 * 1) + (num20 * 1) + (num21 * 1);
             document.getElementById('TalentResult').textContent = `Result: ${result}`;
         }
+
+function calculateDomination() {
+    const domValues = [];
+    for (let i = 1; i <= 21; i++) {
+        const val = document.getElementById(`dom${i}`).value;
+        domValues.push(val ? parseFloat(val) : 0);
+    }
+
+    if (domValues.some(val => isNaN(val))) {
+        document.getElementById('DominationResult').textContent = 'Please enter valid numbers';
+        return;
+    }
+
+    const scrollResult =
+        (domValues[0] * 6) + (domValues[1] * 5) + (domValues[2] * 4) + (domValues[3] * 3) + (domValues[4] * 2) +
+        (domValues[5] * 1) + (domValues[6] * 1) + (domValues[7] * 0.5) + (domValues[8] * 0.25) + (domValues[9] * 2.5) +
+        (domValues[10] * 0.9) + (domValues[11] * 0.7) + (domValues[12] * 0.5) + (domValues[13] * 0.3) + (domValues[14] * 0.15) +
+        (domValues[15] * 0.065) + (domValues[16] * 0.015) + (domValues[17] * 1) + (domValues[18] * 1) +
+        (domValues[19] * 1) + (domValues[20] * 1);
+
+    const adjustedScrollTotal = scrollResult * 12.47;
+
+    // Book values: dom22 to dom27
+    const bookMultipliers = [15, 5, 1, 1.5, 0.4, 0.1];
+    const bookValues = [];
+    for (let i = 22; i <= 27; i++) {
+        const val = document.getElementById(`dom${i}`).value;
+        bookValues.push(val ? parseFloat(val) : 0);
+    }
+
+    if (bookValues.some(val => isNaN(val))) {
+        document.getElementById('DominationResult').textContent = 'Please enter valid numbers';
+        return;
+    }
+
+    let bookTotal = 0;
+    for (let i = 0; i < bookValues.length; i++) {
+        bookTotal += bookValues[i] * bookMultipliers[i];
+    }
+
+    const finalTotal = (adjustedScrollTotal + bookTotal) / 1000;
+    document.getElementById('DominationResult').textContent = `${finalTotal.toFixed(2)} M`;
+}
         
         function clearFields(calculatorType) {
             // Clear input fields
