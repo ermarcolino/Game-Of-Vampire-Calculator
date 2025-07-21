@@ -334,164 +334,184 @@
     </div>
     
 <!-- Dominance Calculator -->
-    <div id="Dominance" class="calculator hidden">
-        <h2>Dominance Calculator</h2>
-        <p>Enter your stocks for each item:</p>
+<div id="Dominance" class="calculator hidden">
+    <h2>Dominance Calculator</h2>
+    <form id="DominanceForm">
+        <!-- Section: Talent Scrolls -->
+        <h3>Talent Scrolls</h3>
+        <div class="input-group">
+            <img src="icons/talent6.png" alt="Talent VI" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="talent6" min="0" placeholder="Talent Scroll VI (6 pts)">
+        </div>
+        <div class="input-group">
+            <img src="icons/talent5.png" alt="Talent V" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="talent5" min="0" placeholder="Talent Scroll V (5 pts)">
+        </div>
+        <div class="input-group">
+            <img src="icons/talent4.png" alt="Talent IV" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="talent4" min="0" placeholder="Talent Scroll IV (4 pts)">
+        </div>
+        <div class="input-group">
+            <img src="icons/talent3.png" alt="Talent III" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="talent3" min="0" placeholder="Talent Scroll III (3 pts)">
+        </div>
+        <div class="input-group">
+            <img src="icons/talent2.png" alt="Talent II" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="talent2" min="0" placeholder="Talent Scroll II (2 pts)">
+        </div>
+        <div class="input-group">
+            <img src="icons/talent1.png" alt="Talent I" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="talent1" min="0" placeholder="Talent Scroll I (1 pt)">
+        </div>
+        <hr>
 
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom1" placeholder="Domination Scroll VI">
-    </div>
+        <!-- Section: Experience Scrolls -->
+        <h3>Experience Scrolls</h3>
+        <div style="font-size: 0.93em; color: #666; margin-bottom: 8px;">
+            Dominance from experience is approximate. Experience must reach a breakpoint of 200 for each caretaker for dominance to increase, and random scrolls may scatter experience, so results may not be exact.
+        </div>
+        <div class="input-group">
+            <img src="icons/exp-superior.png" alt="Superior" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="expSuperior" min="0" placeholder="Superior Experience Scroll (200 XP)">
+        </div>
+        <div class="input-group">
+            <img src="icons/exp-fine.png" alt="Fine" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="expFine" min="0" placeholder="Fine Experience Scroll (100 XP)">
+        </div>
+        <div class="input-group">
+            <img src="icons/exp-basic.png" alt="Basic" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="expBasic" min="0" placeholder="Basic Experience Scroll (50 XP)">
+        </div>
+        <div class="input-group">
+            <img src="icons/exp-random.png" alt="Random" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="expRandom" min="0" placeholder="Random Experience Scroll (72.5 XP)">
+        </div>
+        <div class="input-group">
+            <img src="icons/exp-lvl7.png" alt="Lvl 7" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="expLvl7" min="0" placeholder="Experience Scroll Lvl 7 (180.5 XP)">
+        </div>
+        <div class="input-group">
+            <img src="icons/exp-lvl6.png" alt="Lvl 6" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="expLvl6" min="0" placeholder="Experience Scroll Lvl 6 (140.5 XP)">
+        </div>
+        <div class="input-group">
+            <img src="icons/exp-lvl5.png" alt="Lvl 5" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="expLvl5" min="0" placeholder="Experience Scroll Lvl 5 (100.5 XP)">
+        </div>
+        <div class="input-group">
+            <img src="icons/exp-lvl4.png" alt="Lvl 4" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="expLvl4" min="0" placeholder="Experience Scroll Lvl 4 (61 XP)">
+        </div>
+        <div class="input-group">
+            <img src="icons/exp-lvl3.png" alt="Lvl 3" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="expLvl3" min="0" placeholder="Experience Scroll Lvl 3 (30.5 XP)">
+        </div>
+        <div class="input-group">
+            <img src="icons/exp-lvl2.png" alt="Lvl 2" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="expLvl2" min="0" placeholder="Experience Scroll Lvl 2 (13 XP)">
+        </div>
+        <div class="input-group">
+            <img src="icons/exp-lvl1.png" alt="Lvl 1" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="expLvl1" min="0" placeholder="Experience Scroll Lvl 1 (3 XP)">
+        </div>
+        <hr>
 
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom2" placeholder="Domination Scroll V">
-    </div>
+        <!-- Section: Scripts -->
+        <h3>Scripts</h3>
+        <div class="input-group">
+            <img src="icons/script-strength.png" alt="Strength" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="scriptStrength" min="0" placeholder="Strength Script">
+        </div>
+        <div class="input-group">
+            <img src="icons/script-allure.png" alt="Allure" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="scriptAllure" min="0" placeholder="Allure Script">
+        </div>
+        <div class="input-group">
+            <img src="icons/script-intellect.png" alt="Intellect" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="scriptIntellect" min="0" placeholder="Intellect Script">
+        </div>
+        <div class="input-group">
+            <img src="icons/script-spirit.png" alt="Spirit" style="width:24px;height:24px;margin-right:8px;">
+            <input type="number" id="scriptSpirit" min="0" placeholder="Spirit Script">
+        </div>
+        <hr>
 
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom3" placeholder="Domination Scroll IV">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom4" placeholder="Domination Scroll III">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom5" placeholder="Domination Scroll II">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom6" placeholder="Domination Scroll I">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom7" placeholder="Superior Domination Scroll">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom8" placeholder="Fine Domination Scroll">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom9" placeholder="Basic Domination Scroll">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom10" placeholder="Random Domination Scroll">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom11" placeholder="Domination Scroll Lvl-7">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom12" placeholder="Domination Scroll Lvl-6">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom13" placeholder="Domination Scroll Lvl-5">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom14" placeholder="Domination Scroll Lvl-4">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom15" placeholder="Domination Scroll Lvl-3">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom16" placeholder="Domination Scroll Lvl-2">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom17" placeholder="Domination Scroll Lvl-1">
-    </div>
-
-    <h3>Scripts:</h3>
-    <p>Scripts operate somewhat differently; you must select the specific dominations on which to use the script.</p>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom18" placeholder="Strength Script">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom19" placeholder="Allure Script">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom20" placeholder="Intellect Script">
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-scroll"></i>
-        <input type="number" id="dom21" placeholder="Spirit Script">
-    </div>
-
-<h3>Books:</h3>
-<p>Enter your stocks for each book type:</p>
-
-<div class="input-group">
-    <i class="fas fa-scroll"></i>
-    <input type="number" id="dom22" placeholder="15k Book (1000 for 15 Wardens)">
+        <!-- Section: Books -->
+        <h3>Books</h3>
+        <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;">
+                <thead>
+                    <tr style="background:#f2f2f2;">
+                        <th style="padding:6px;">Type</th>
+                        <th style="padding:6px;">15k</th>
+                        <th style="padding:6px;">5k</th>
+                        <th style="padding:6px;">1.5k</th>
+                        <th style="padding:6px;">1k</th>
+                        <th style="padding:6px;">0.4k</th>
+                        <th style="padding:6px;">0.1k</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="icons/book-strength.png" alt="Strength" style="width:24px;height:24px;margin-right:4px;">Strength</td>
+                        <td><input type="number" id="bookStrength15k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookStrength5k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookStrength15h" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookStrength1k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookStrength04k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookStrength01k" min="0" style="width:50px;"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="icons/book-allure.png" alt="Allure" style="width:24px;height:24px;margin-right:4px;">Allure</td>
+                        <td><input type="number" id="bookAllure15k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookAllure5k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookAllure15h" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookAllure1k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookAllure04k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookAllure01k" min="0" style="width:50px;"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="icons/book-intellect.png" alt="Intellect" style="width:24px;height:24px;margin-right:4px;">Intellect</td>
+                        <td><input type="number" id="bookIntellect15k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookIntellect5k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookIntellect15h" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookIntellect1k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookIntellect04k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookIntellect01k" min="0" style="width:50px;"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="icons/book-spirit.png" alt="Spirit" style="width:24px;height:24px;margin-right:4px;">Spirit</td>
+                        <td><input type="number" id="bookSpirit15k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookSpirit5k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookSpirit15h" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookSpirit1k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookSpirit04k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookSpirit01k" min="0" style="width:50px;"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="icons/book-random.png" alt="Random" style="width:24px;height:24px;margin-right:4px;">Random</td>
+                        <td><input type="number" id="bookRandom15k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookRandom5k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookRandom15h" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookRandom1k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookRandom04k" min="0" style="width:50px;"></td>
+                        <td><input type="number" id="bookRandom01k" min="0" style="width:50px;"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <button type="button" onclick="calculateDominance()">Calculate</button>
+        <button type="button" onclick="clearDominanceFields()">Clear All</button>
+        <div id="DominanceResult" class="result" style="margin-top:15px;"></div>
+    </form>
 </div>
 
-<div class="input-group">
-    <i class="fas fa-scroll"></i>
-    <input type="number" id="dom23" placeholder="5k Book">
-</div>
-
-<div class="input-group">
-    <i class="fas fa-scroll"></i>
-    <input type="number" id="dom24" placeholder="1k Book">
-</div>
-
-<div class="input-group">
-    <i class="fas fa-scroll"></i>
-    <input type="number" id="dom25" placeholder="1.5k Book (100 for 15 Wardens)">
-</div>
-
-<div class="input-group">
-    <i class="fas fa-scroll"></i>
-    <input type="number" id="dom26" placeholder="400 Book">
-</div>
-
-<div class="input-group">
-    <i class="fas fa-scroll"></i>
-    <input type="number" id="dom27" placeholder="100 Book">
-</div>
-
-
-    
-<p>This result is an approximation. Talent experience only converts to dominance when reaching a breakpoint of 200 experience to increase a one-star talent, so partial experience increases might not reflect as expected. </p>
-    <p>Additionally, this calculator only includes talent items and books—other factors such as progeny, Conclave tree progress, pet boons, and summoning new wardens can also increase your dominance and are not reflected here.</p>
-    <button onclick="calculateDomination()">Calculate</button>
-    <button onclick="clearFields('Domination')" class="clear-btn">Clear All</button>
-    <div id="DominationResult" class="result"></div>
-        <p id="DominationNote" style="margin-top: 10px; font-style: italic;"></p>
-</div>
 
 
 
-    </div>
+
+
 
     <script>
         // Show the selected page and hide others
@@ -594,63 +614,118 @@
             document.getElementById('TalentResult').textContent = `Result: ${result}`;
         }
 
-function calculateDomination() {
-    const domValues = [];
-    for (let i = 1; i <= 21; i++) {
-        const val = document.getElementById(`dom${i}`).value;
-        domValues.push(val ? parseFloat(val) : 0);
+
+
+// Dominance Calculator JS
+
+function calculateDominance() {
+    // Talent Scrolls
+    const talentScrolls = [
+        {id: 'talent6', pts: 6},
+        {id: 'talent5', pts: 5},
+        {id: 'talent4', pts: 4},
+        {id: 'talent3', pts: 3},
+        {id: 'talent2', pts: 2},
+        {id: 'talent1', pts: 1}
+    ];
+    let talentTotal = 0;
+    for (const t of talentScrolls) {
+        let val = document.getElementById(t.id).value;
+        val = val ? parseFloat(val) : 0;
+        if (isNaN(val) || val < 0) return resultError();
+        talentTotal += val * t.pts;
     }
+    let dominanceTalent = talentTotal * 12.47;
 
-    if (domValues.some(val => isNaN(val))) {
-        document.getElementById('DominationResult').textContent = 'Please enter valid numbers';
-        return;
+    // Experience Scrolls
+    const expScrolls = [
+        {id: 'expSuperior', xp: 200},
+        {id: 'expFine', xp: 100},
+        {id: 'expBasic', xp: 50},
+        {id: 'expRandom', xp: 72.5},
+        {id: 'expLvl7', xp: 180.5},
+        {id: 'expLvl6', xp: 140.5},
+        {id: 'expLvl5', xp: 100.5},
+        {id: 'expLvl4', xp: 61},
+        {id: 'expLvl3', xp: 30.5},
+        {id: 'expLvl2', xp: 13},
+        {id: 'expLvl1', xp: 3}
+    ];
+    let expTotal = 0;
+    for (const e of expScrolls) {
+        let val = document.getElementById(e.id).value;
+        val = val ? parseFloat(val) : 0;
+        if (isNaN(val) || val < 0) return resultError();
+        expTotal += val * e.xp;
     }
+    let dominanceExp = ((expTotal / 200) * 12.47);
 
-    const scrollResult =
-        (domValues[0] * 6) + (domValues[1] * 5) + (domValues[2] * 4) + (domValues[3] * 3) + (domValues[4] * 2) +
-        (domValues[5] * 1) + (domValues[6] * 1) + (domValues[7] * 0.5) + (domValues[8] * 0.25) + (domValues[9] * 2.5) +
-        (domValues[10] * 0.9) + (domValues[11] * 0.7) + (domValues[12] * 0.5) + (domValues[13] * 0.3) + (domValues[14] * 0.15) +
-        (domValues[15] * 0.065) + (domValues[16] * 0.015) + (domValues[17] * 1) + (domValues[18] * 1) +
-        (domValues[19] * 1) + (domValues[20] * 1);
-
-    const adjustedScrollTotal = scrollResult * 12.47;
-
-    // Book values: dom22 to dom27
-    const bookMultipliers = [15, 5, 1, 1.5, 0.4, 0.1];
-    const bookValues = [];
-    for (let i = 22; i <= 27; i++) {
-        const val = document.getElementById(`dom${i}`).value;
-        bookValues.push(val ? parseFloat(val) : 0);
+    // Scripts
+    const scriptIds = ['scriptStrength', 'scriptAllure', 'scriptIntellect', 'scriptSpirit'];
+    let scriptTotal = 0;
+    for (const sId of scriptIds) {
+        let val = document.getElementById(sId).value;
+        val = val ? parseFloat(val) : 0;
+        if (isNaN(val) || val < 0) return resultError();
+        scriptTotal += val;
     }
+    let dominanceScript = scriptTotal * 12.47;
 
-    if (bookValues.some(val => isNaN(val))) {
-        document.getElementById('DominationResult').textContent = 'Please enter valid numbers';
-        return;
-    }
-
-    let bookTotal = 0;
-    for (let i = 0; i < bookValues.length; i++) {
-        bookTotal += bookValues[i] * bookMultipliers[i];
-    }
-
-    const finalTotal = (adjustedScrollTotal + bookTotal) / 1000;
-    document.getElementById('DominationResult').textContent = `${finalTotal.toFixed(2)} M`;
-}
-        document.getElementById('DominationResult').textContent = `${finalTotal.toFixed(2)} M`;
-
-document.getElementById('DominationNote').textContent =
-  "Note: This result is an approximation. Talent experience only converts to dominance when reaching a breakpoint of 200 per warden, so partial contributions might not reflect as expected. Additionally, this calculator only includes talent items and books—other factors such as progeny, Conclave tree progress, pet boons, and summoning new wardens can also increase your dominance and are not reflected here.";
-        
-        function clearFields(calculatorType) {
-            // Clear input fields
-            const inputs = document.querySelectorAll(`#${calculatorType} input[type="number"]`);
-            inputs.forEach(input => {
-                input.value = '';
-            });
-            
-            // Clear the result display
-            document.getElementById(`${calculatorType}Result`).textContent = '';
+    // Books -- Sum by type across all groups
+    const bookTypes = [
+        {suffix: '15k', multiplier: 15},
+        {suffix: '5k', multiplier: 5},
+        {suffix: '15h', multiplier: 1.5}, // 1.5k
+        {suffix: '1k', multiplier: 1},
+        {suffix: '04k', multiplier: 0.4},
+        {suffix: '01k', multiplier: 0.1}
+    ];
+    const bookGroups = ['Strength', 'Allure', 'Intellect', 'Spirit', 'Random'];
+    let dominanceBook = 0;
+    for (const type of bookTypes) {
+        let bookTypeSum = 0;
+        for (const group of bookGroups) {
+            let inputId = `book${group}${type.suffix}`;
+            let val = document.getElementById(inputId).value;
+            val = val ? parseFloat(val) : 0;
+            if (isNaN(val) || val < 0) return resultError();
+            bookTypeSum += val;
         }
+        dominanceBook += bookTypeSum * type.multiplier;
+    }
+
+    let dominanceTotal = dominanceTalent + dominanceExp + dominanceScript + dominanceBook;
+    let finalTotal = dominanceTotal / 1000;
+    document.getElementById('DominanceResult').textContent =
+        `Dominance: ${finalTotal.toFixed(2)} M\n\n` +
+        `Talent Scrolls: ${(dominanceTalent/1000).toFixed(2)} M\n` +
+        `Experience Scrolls: ${(dominanceExp/1000).toFixed(2)} M (approximate)\n` +
+        `Scripts: ${(dominanceScript/1000).toFixed(2)} M\n` +
+        `Books: ${(dominanceBook/1000).toFixed(2)} M`;
+
+    // Explain experience approximation
+    document.getElementById('DominanceResult').innerHTML +=
+        `<br><span style="font-size:0.93em;color:#666;">Note: Experience scroll dominance is approximate. Experience is split into breakpoints of 200 per caretaker and random scrolls may scatter experience, so results may not be exact.</span>`;
+}
+
+function resultError() {
+    document.getElementById('DominanceResult').textContent = 'Please enter only non-negative numbers.';
+    return;
+}
+
+function clearDominanceFields() {
+    // Clear all number inputs in dominance section
+    const domInputs = document.querySelectorAll("#Dominance input[type='number']");
+    domInputs.forEach(input => input.value = '');
+    // Clear result
+    document.getElementById('DominanceResult').textContent = '';
+}
+
+
+
+
+
+
 
         // Show Intimacy calculator by default when page loads
         document.addEventListener('DOMContentLoaded', function() {
