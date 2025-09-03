@@ -569,6 +569,14 @@
 
 
     <script>
+        function clearFields(pageId) {
+    // Get all number inputs inside the specified calculator section
+    const inputs = document.querySelectorAll(`#${pageId} input[type="number"]`);
+    inputs.forEach(input => input.value = '');
+    // Clear result
+    const resultDiv = document.querySelector(`#${pageId}Result`);
+    if (resultDiv) resultDiv.textContent = '';
+}
         // Show the selected page and hide others
         function showPage(pageId) {
             const pages = document.querySelectorAll('.calculator');
